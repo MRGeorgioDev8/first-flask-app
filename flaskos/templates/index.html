@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ super() }}
+     <script>
+        $(document).ready(function() {
+            $(".scrolling").css("transform", "translateY(0)");
+            $(".h2-animated").css("transform", "translateX(0)");
+        });
+    </script>
+    <h2 class="h2-animated" style="transform: translateX(-100%); transition: transform linear 1s;">Список статей:</h2>
+    <div class="scroll-container">
+    <ul class="scrolling" style="transform: translateY(-100%); transition: transform  ease-in-out 0.8s;">
+        {% for p in posts %}
+        <li>
+            <p class="title">
+                <a class="a_menu" href="{{url_for('show_post', alias=p.url)}}">{{ p.title }}</a>
+            </p>
+            <div class="anonce">{{ p.text[:314] | striptags }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
