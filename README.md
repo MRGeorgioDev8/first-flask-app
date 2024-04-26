@@ -27,7 +27,7 @@ pip install -r requirements.txt
 - В терминале PyCharm клонируйте репозиторий проекта:
 
    ```bash
-   git clone https://github.com/MRGeorgioDev8/flask-task-app.git
+   git clone https://github.com/MRGeorgioDev8/first-flask-app.git
 
 ### Через командную строку (терминал):
 
